@@ -1,4 +1,4 @@
-package ch02;
+package src.ch02;
 
 public class Ex01_Var {
 	public static void main(String[] args) {

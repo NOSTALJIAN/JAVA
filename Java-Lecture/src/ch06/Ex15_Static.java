@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 
 public class Ex15_Static {
 	static double pi = 3.14159;

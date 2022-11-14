@@ -1,4 +1,4 @@
-package ch08;
+package src.ch08;
 
 /*
  * 인터페이스 선언

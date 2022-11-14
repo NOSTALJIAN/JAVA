@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 /*	Tmoney card
 	- 10000원 카드 구매
 	- 1회에 1350원 빠져 나감

@@ -1,4 +1,4 @@
-package ch08.ex12_inheritance;
+package src.ch08.ex12_inheritance;
 
 public class Parent {
 	public void methodParent() {

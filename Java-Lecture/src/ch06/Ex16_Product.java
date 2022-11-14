@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 
 /*	
 1) 인스턴스 필드

@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 
 public class Ex41_MemberService {
 	private Ex41_Member[] members = new Ex41_Member[10];

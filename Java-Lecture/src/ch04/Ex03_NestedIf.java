@@ -1,4 +1,4 @@
-package ch04;
+package src.ch04;
 
 /*
  * 중첩 (Nested) If

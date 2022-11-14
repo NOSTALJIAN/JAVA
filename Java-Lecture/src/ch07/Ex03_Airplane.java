@@ -1,4 +1,4 @@
-package ch07;
+package src.ch07;
 
 public class Ex03_Airplane {
 	public void land() {

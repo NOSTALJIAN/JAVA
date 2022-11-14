@@ -1,4 +1,4 @@
-package ch08;
+package src.ch08;
 
 public class Ex03_Main {
 

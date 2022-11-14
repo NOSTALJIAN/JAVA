@@ -1,4 +1,4 @@
-package ch08;
+package src.ch08;
 
 public interface Ex04_Vehicle {
 	void run();

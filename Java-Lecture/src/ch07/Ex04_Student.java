@@ -1,4 +1,4 @@
-package ch07;
+package src.ch07;
 
 public class Ex04_Student extends Ex04_Person {
 	String major;

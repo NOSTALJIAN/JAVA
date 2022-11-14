@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 
 public class Ex11_Calc {
 	public static void main(String[] args) {

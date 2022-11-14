@@ -1,4 +1,4 @@
-package ch07;
+package src.ch07;
 
 public class Ex13_Vehicle {
 	public void run() {

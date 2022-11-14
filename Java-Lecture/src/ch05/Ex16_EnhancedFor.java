@@ -1,4 +1,4 @@
-package ch05;
+package src.ch05;
 
 /**
  * 향상된 For	(Enhanced-for)

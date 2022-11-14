@@ -1,4 +1,4 @@
-package ch03;
+package src.ch03;
 
 /**
  * 이항 연산자

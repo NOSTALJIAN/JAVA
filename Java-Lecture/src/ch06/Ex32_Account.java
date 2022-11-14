@@ -1,4 +1,4 @@
-package ch06;
+package src.ch06;
 
 public class Ex32_Account {
 	private String ano;

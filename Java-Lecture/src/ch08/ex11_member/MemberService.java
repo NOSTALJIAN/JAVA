@@ -1,4 +1,4 @@
-package ch08.ex11_member;
+package src.ch08.ex11_member;
 
 public interface MemberService {
 	void register (String id, String password, String name);

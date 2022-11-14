@@ -1,4 +1,4 @@
-package ch01;
+package src.ch01;
 
 public class HelloWorld {
 

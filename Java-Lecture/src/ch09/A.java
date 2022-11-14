@@ -1,4 +1,4 @@
-package ch09;
+package src.ch09;
 
 /**
 	중첩(Nested) 클래스

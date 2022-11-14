@@ -1,4 +1,4 @@
-package ch07;
+package src.ch07;
 
 public class Ex02_Child extends Ex02_Parent {
 	int childInt;

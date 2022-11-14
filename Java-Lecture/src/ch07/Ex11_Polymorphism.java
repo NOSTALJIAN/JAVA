@@ -1,4 +1,4 @@
-package ch07;
+package src.ch07;
 
 /**
  * 다형성(Polymorphism)

@@ -1,4 +1,4 @@
-package ch08;
+package src.ch08;
 
 /*
  * 인터페이스 구현 객체 실행
