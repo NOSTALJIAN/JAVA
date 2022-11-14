@@ -1,4 +1,4 @@
-package study_221109.ch01;
+package study.ch01;
 
 public class operatorEx01 {
 
