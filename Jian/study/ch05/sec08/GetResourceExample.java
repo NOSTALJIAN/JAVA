@@ -1,4 +1,4 @@
-package study_221109.ch05.sec08;
+package study.ch05.sec08;
 
 public class GetResourceExample {
 	public static void main(String[] args) {

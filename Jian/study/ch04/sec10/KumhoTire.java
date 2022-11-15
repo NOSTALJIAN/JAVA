@@ -1,4 +1,4 @@
-package study_221109.ch04.sec10;
+package study.ch04.sec10;
 
 public class KumhoTire implements Tire {
 	//추상 메소드 재정의

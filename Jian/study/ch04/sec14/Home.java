@@ -1,4 +1,4 @@
-package study_221109.ch04.sec14;
+package study.ch04.sec14;
 
 public class Home {
 	//필드에 익명 구현 객체 대입

@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 
 public class User1Thread extends Thread {
 	private Calculator calculator;

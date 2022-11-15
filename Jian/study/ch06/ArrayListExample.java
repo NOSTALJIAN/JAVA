@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 
 import java.util.ArrayList;
 import java.util.List;

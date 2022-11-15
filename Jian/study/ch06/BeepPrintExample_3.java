@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 
 import java.awt.Toolkit;
 //	Thread 자식 클래스로 생성

@@ -1,4 +1,4 @@
-package study_221109.ch05.sec08;
+package study.ch05.sec08;
 
 //제네릭 타입
 public class Product<K, M> {		//	타입 파라미터로 K와 M 정의

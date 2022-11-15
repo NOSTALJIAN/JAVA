@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 //다른 스레드의 종료를 기다림(1/2)
 public class SumThread extends Thread {
 	private long sum;

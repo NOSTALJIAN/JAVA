@@ -1,4 +1,4 @@
-package study_221109.ch04.sec13;
+package study.ch04.sec13;
 
 public class AExample {
 

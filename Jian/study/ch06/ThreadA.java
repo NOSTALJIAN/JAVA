@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 //wait()과 notify()를 이용한 스레드 제어
 public class ThreadA extends Thread {
 	private WorkObject workObject;

@@ -1,4 +1,4 @@
-package study_221109.ch04.sec14;
+package study.ch04.sec14;
 
 public class Button {
 	//정적 중첩 인터페이스

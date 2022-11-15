@@ -1,4 +1,4 @@
-package study_221109.ch05.sec02;
+package study.ch05.sec02;
 
 public class ExceptionHandlingExample {
 	

@@ -1,4 +1,4 @@
-package study_221109.ch04.sec04;
+package study.ch04.sec04;
 
 public class Television implements RemoteControl{
 	//필드

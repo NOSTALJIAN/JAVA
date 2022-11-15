@@ -1,4 +1,4 @@
-package study_221109.ch03;
+package study.ch03;
 
 public class Calculator {
 	//	리턴값이 없는 메소드 선언

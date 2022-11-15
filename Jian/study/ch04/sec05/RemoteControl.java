@@ -1,4 +1,4 @@
-package study_221109.ch04.sec05;
+package study.ch04.sec05;
 
 public interface RemoteControl {
 	//상수 필드

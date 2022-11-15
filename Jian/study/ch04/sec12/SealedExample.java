@@ -1,4 +1,4 @@
-package study_221109.ch04.sec12;
+package study.ch04.sec12;
 
 public class SealedExample {
 

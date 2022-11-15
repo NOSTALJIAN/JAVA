@@ -1,4 +1,4 @@
-package study_221109.ch04;
+package study.ch04;
 
 public class Cat extends Animal {
 	//추상 메소드 재정의

@@ -1,4 +1,4 @@
-package study_221109.ch05.sec09;
+package study.ch05.sec09;
 
 public class GenericExamplee {
 	//제한된 타입 파라미터를 갖는 제네릭 메소드

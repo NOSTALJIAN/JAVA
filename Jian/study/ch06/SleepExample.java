@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 
 import java.awt.Toolkit;
 //	주어진 시간 동안 일시 정지

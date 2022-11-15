@@ -1,4 +1,4 @@
-package study_221109.ch02.quiz;
+package study.ch02.quiz;
 
 public class Q04_forStar {
 

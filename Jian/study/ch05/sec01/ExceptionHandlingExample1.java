@@ -1,4 +1,4 @@
-package study_221109.ch05.sec01;
+package study.ch05.sec01;
 
 public class ExceptionHandlingExample1 {
 	public static void printLength(String data) {

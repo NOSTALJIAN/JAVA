@@ -1,4 +1,4 @@
-package study_221109.ch05.sec08;
+package study.ch05.sec08;
 
 import java.util.Arrays;
 import java.util.Random;

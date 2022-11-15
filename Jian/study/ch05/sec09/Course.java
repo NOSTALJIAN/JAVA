@@ -1,4 +1,4 @@
-package study_221109.ch05.sec09;
+package study.ch05.sec09;
 
 public class Course {
 	//모든 사람이면 등록 가능

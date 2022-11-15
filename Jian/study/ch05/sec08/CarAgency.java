@@ -1,4 +1,4 @@
-package study_221109.ch05.sec08;
+package study.ch05.sec08;
 
 public class CarAgency implements Rentable<Caar> {		//	타입 파라미터 P를 Caar로 대체
 	@Override

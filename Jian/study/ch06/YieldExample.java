@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 //다른 스레드에게 실행 양보(2/2)
 public class YieldExample {
 	public static void main(String[] args) {

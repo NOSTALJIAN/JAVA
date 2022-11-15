@@ -1,4 +1,4 @@
-package study_221109.ch05.sec06;
+package study.ch05.sec06;
 
 import java.util.HashSet;			//	HashSet java.util 패키지에 있으므로 import해야 함
 

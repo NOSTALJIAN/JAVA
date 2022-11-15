@@ -1,4 +1,4 @@
-package study_221109.ch02;
+package study.ch02;
 
 public class EmptyStringExamplle {
 

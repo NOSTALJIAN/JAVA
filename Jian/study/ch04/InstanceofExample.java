@@ -1,4 +1,4 @@
-package study_221109.ch04;
+package study.ch04;
 
 public class InstanceofExample {
 	//main() 메소드에서 바로 호출하기 위해 정적 메소드 선언

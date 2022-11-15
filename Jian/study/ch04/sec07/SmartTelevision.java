@@ -1,4 +1,4 @@
-package study_221109.ch04.sec07;
+package study.ch04.sec07;
 
 public class SmartTelevision implements RemoteControl, Searchable {
 	//turnOn() 추상 메소드 오버라이딩

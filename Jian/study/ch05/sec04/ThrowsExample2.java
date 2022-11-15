@@ -1,4 +1,4 @@
-package study_221109.ch05.sec04;
+package study.ch05.sec04;
 
 public class ThrowsExample2 {
 	public static void main(String[] args) throws Exception {

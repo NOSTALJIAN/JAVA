@@ -1,4 +1,4 @@
-package study_221109.ch04;
+package study.ch04;
 
 public class SmartPhoneee extends Phoneee {
 	//자식 생성자 선언

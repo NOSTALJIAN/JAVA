@@ -1,4 +1,4 @@
-package study_221109.ch05.sec05;
+package study.ch05.sec05;
 
 public class AccountExample {
 	public static void main(String[] args) {

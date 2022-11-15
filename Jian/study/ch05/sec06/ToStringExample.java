@@ -1,4 +1,4 @@
-package study_221109.ch05.sec06;
+package study.ch05.sec06;
 
 public class ToStringExample {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 //Synchronized (싱크로나이즈드) 동기화 스레드
 public class SynchronizedExample {
 	public static void main(String[] args) {

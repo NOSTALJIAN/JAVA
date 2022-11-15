@@ -1,4 +1,4 @@
-package study_221109.ch04.sec08;
+package study.ch04.sec08;
 
 public class InterfaceCImpl implements InterfaceC {
 	public void methodA() {

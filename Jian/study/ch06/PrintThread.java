@@ -1,4 +1,4 @@
-package study_221109.ch06;
+package study.ch06;
 //스레드 안전 종료(1/2)
 public class PrintThread extends Thread {
 	private boolean stop;

@@ -1,4 +1,4 @@
-package study_221109.ch03;
+package study.ch03;
 
 public class Calculatorrr {
 	static double pi = 3.14159;

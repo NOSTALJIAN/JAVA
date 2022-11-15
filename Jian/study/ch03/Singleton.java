@@ -1,4 +1,4 @@
-package study_221109.ch03;
+package study.ch03;
 
 public class Singleton {
 	//	private 접근 권한을 갖는 정적 필드 선언과 초기화

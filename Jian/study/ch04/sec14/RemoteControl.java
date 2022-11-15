@@ -1,4 +1,4 @@
-package study_221109.ch04.sec14;
+package study.ch04.sec14;
 
 public interface RemoteControl {
 	//추상 메소드

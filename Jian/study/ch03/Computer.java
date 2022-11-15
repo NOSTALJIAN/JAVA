@@ -1,4 +1,4 @@
-package study_221109.ch03;
+package study.ch03;
 
 public class Computer {
 	//	가변길이 매개변수를 갖는 메소드 선언
