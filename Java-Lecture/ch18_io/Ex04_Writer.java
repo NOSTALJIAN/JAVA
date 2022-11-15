@@ -18,7 +18,7 @@ public class Ex04_Writer {
 		writer.write(arr);
 		
 		//	문자열 출력
-		writer.write("FGH");
+		writer.write("FGH\n");
 		writer.write("한글도 잘 써짐");
 		
 		writer.flush();					//	출력 버퍼에 잔류하는 모든 바이트를 출력
