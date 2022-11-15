@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 /*
  * 인터페이스 구현 객체 실행

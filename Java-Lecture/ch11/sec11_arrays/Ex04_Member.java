@@ -1,4 +1,4 @@
-package together.ch11.sec11_arrays;
+package ch11.sec11_arrays;
 
 public class Ex04_Member implements Comparable<Ex04_Member> {
 	int id;

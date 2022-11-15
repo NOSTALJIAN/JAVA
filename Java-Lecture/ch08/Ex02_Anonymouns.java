@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 public class Ex02_Anonymouns {
 	public static void main(String[] args) {

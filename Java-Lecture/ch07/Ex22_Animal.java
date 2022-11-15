@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 public abstract class Ex22_Animal {
 	String kind;

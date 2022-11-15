@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 public interface Q04_DataAccessObject {
 	public abstract void select();

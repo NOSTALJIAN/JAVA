@@ -1,4 +1,4 @@
-package together.ch08.ex11_member;
+package ch08.ex11_member;
 
 public class Member {
 	private String id;

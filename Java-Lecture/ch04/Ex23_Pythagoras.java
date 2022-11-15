@@ -1,4 +1,4 @@
-package together.ch04;
+package ch04;
 
 /**
  * a + b + c = 1000, a < b < c 를 만족시키는 피타고라스 수를 구하시오.

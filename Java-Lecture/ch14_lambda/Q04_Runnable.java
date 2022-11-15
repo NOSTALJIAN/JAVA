@@ -1,4 +1,4 @@
-package together.ch14_lambda;
+package ch14_lambda;
 
 public class Q04_Runnable {
 

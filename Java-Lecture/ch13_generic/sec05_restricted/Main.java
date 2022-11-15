@@ -1,4 +1,4 @@
-package together.ch13_generic.sec05_restricted;
+package ch13_generic.sec05_restricted;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package together.ch15_collection.sec01_arrayList;
+package ch15_collection.sec01_arrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;

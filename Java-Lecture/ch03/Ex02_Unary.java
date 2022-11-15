@@ -1,4 +1,4 @@
-package together.ch03;
+package ch03;
 
 /**
  * 단항 연산자

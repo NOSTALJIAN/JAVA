@@ -1,4 +1,4 @@
-package together.ch11.sec18_dateTime;
+package ch11.sec18_dateTime;
 
 import java.util.Calendar;
 import java.util.TimeZone;

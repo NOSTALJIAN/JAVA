@@ -1,4 +1,4 @@
-package together.ch02;
+package ch02;
 
 public class Ex02_DataType {
 

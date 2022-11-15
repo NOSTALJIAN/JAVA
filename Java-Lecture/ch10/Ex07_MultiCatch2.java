@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 public class Ex07_MultiCatch2 {
 

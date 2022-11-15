@@ -1,4 +1,4 @@
-package together.ch11;
+package ch11;
 
 public class Ex13_Math {
 

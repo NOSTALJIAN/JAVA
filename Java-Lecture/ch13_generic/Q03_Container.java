@@ -1,4 +1,4 @@
-package together.ch13_generic;
+package ch13_generic;
 
 public class Q03_Container<K, V> {
 	private K key;

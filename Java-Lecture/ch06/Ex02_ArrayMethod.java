@@ -1,4 +1,4 @@
-package together.ch06;
+package ch06;
 
 /*
  * 배열에서 사용하면 좋을 법한 프로그램을 메쏘드로 만들기

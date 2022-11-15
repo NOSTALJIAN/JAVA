@@ -1,4 +1,4 @@
-package together.ch15_collection.question.q07;
+package ch15_collection.question.q07;
 
 import java.util.List;
 

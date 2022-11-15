@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 public class Ex01_Audio implements Ex01_RemoteControllable{
 	private int volume;

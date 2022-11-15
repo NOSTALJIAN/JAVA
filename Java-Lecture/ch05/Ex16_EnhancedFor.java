@@ -1,4 +1,4 @@
-package together.ch05;
+package ch05;
 
 /**
  * 향상된 For	(Enhanced-for)

@@ -1,4 +1,4 @@
-package together.ch11.sec07_string;
+package ch11.sec07_string;
 
 /**
  * 유용한 나만의 String method

@@ -1,4 +1,4 @@
-package together.ch11.sec04_objects;
+package ch11.sec04_objects;
 
 public class Ex02_HashMain {
 

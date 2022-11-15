@@ -1,4 +1,4 @@
-package together.ch06;
+package ch06;
 
 public class Ex41_Member {
 	private String id;

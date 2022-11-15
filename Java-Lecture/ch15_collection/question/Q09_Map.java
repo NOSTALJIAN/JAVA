@@ -1,4 +1,4 @@
-package together.ch15_collection.question;
+package ch15_collection.question;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package together.ch17_stream;
+package ch17_stream;
 
 import java.util.ArrayList;
 import java.util.List;

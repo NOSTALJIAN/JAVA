@@ -1,4 +1,4 @@
-package together.ch04;
+package ch04;
 
 import java.util.Random;
 //import java.util.Scanner;

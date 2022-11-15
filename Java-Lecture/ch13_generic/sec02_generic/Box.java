@@ -1,4 +1,4 @@
-package together.ch13_generic.sec02_generic;
+package ch13_generic.sec02_generic;
 
 public class Box<T> {
 	private T t;

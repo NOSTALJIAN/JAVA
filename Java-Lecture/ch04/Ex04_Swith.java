@@ -1,4 +1,4 @@
-package together.ch04;
+package ch04;
 
 public class Ex04_Swith {
 

@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 /**
  * ArrayIndexOutOfBoundsException

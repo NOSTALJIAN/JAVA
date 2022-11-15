@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 /**
  * 예외 처리

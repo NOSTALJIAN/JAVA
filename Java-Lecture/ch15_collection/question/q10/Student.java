@@ -1,4 +1,4 @@
-package together.ch15_collection.question.q10;
+package ch15_collection.question.q10;
 
 public class Student implements Comparable<Student> {
 	public String id;

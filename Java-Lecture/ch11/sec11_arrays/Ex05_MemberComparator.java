@@ -1,4 +1,4 @@
-package together.ch11.sec11_arrays;
+package ch11.sec11_arrays;
 
 import java.util.Comparator;
 

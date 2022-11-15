@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 /*
  * 인터페이스 선언

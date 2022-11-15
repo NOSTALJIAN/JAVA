@@ -1,4 +1,4 @@
-package together.exercise;
+package exercise;
 
 /**
  * 자기 자신을 제외한 모든 양의 약수들의 합이 자기 자신이 되는 자연수를 

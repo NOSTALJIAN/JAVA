@@ -1,4 +1,4 @@
-package together.ch14_lambda.sec07_andThen_compose;
+package ch14_lambda.sec07_andThen_compose;
 
 public class Member {
 	private String name;

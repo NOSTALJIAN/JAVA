@@ -1,4 +1,4 @@
-package together.ch09;
+package ch09;
 
 public class Main {
 

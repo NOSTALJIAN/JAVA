@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 /**
  * 추상(abstract) 클래스

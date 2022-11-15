@@ -1,4 +1,4 @@
-package together.ch11.sec18_dateTime;
+package ch11.sec18_dateTime;
 
 import java.time.DayOfWeek;
 import java.time.LocalDateTime;

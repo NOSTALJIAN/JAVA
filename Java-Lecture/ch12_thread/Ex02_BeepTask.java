@@ -1,4 +1,4 @@
-package together.ch12_thread;
+package ch12_thread;
 
 import java.awt.Toolkit;
 

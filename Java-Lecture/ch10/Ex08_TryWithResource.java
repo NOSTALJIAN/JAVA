@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

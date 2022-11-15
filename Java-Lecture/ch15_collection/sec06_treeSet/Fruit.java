@@ -1,4 +1,4 @@
-package together.ch15_collection.sec06_treeSet;
+package ch15_collection.sec06_treeSet;
 
 public class Fruit {
 	public String name;

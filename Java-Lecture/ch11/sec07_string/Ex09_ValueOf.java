@@ -1,4 +1,4 @@
-package together.ch11.sec07_string;
+package ch11.sec07_string;
 
 public class Ex09_ValueOf {
 

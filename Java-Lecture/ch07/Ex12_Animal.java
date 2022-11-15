@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 /**
  * 다형성 - Animal 사례

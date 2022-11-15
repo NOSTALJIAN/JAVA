@@ -1,4 +1,4 @@
-package together.ch08.ex13_defaultMethod;
+package ch08.ex13_defaultMethod;
 
 /*
  * 기존에 MyInterface를 구현한 클래스

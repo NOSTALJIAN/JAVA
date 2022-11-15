@@ -1,4 +1,4 @@
-package together.ch11.sec10_regex;
+package ch11.sec10_regex;
 
 import java.util.regex.Pattern;
 

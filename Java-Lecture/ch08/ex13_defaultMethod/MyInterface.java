@@ -1,4 +1,4 @@
-package together.ch08.ex13_defaultMethod;
+package ch08.ex13_defaultMethod;
 
 /*
  * 최초에 method1()을 만들고,

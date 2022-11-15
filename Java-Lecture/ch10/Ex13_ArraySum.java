@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 public class Ex13_ArraySum {
 

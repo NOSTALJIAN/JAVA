@@ -1,4 +1,4 @@
-package together.ch13_generic.sec04_method;
+package ch13_generic.sec04_method;
 
 public class MainBox {
 

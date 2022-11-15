@@ -1,4 +1,4 @@
-package together.ch11.sec03_object;
+package ch11.sec03_object;
 
 public class Key {
 	public int number;

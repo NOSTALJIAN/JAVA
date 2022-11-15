@@ -1,4 +1,4 @@
-package together.ch08.ex12_inheritance;
+package ch08.ex12_inheritance;
 
 public class Misc extends Parent implements InterfaceC {
 

@@ -1,4 +1,4 @@
-package together.exercise;
+package exercise;
 
 public class Q07_Inheritance {
 

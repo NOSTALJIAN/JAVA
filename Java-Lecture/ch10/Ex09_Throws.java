@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 /**
  * throws - 예외를 호출한 곳으로 떠 넘기기

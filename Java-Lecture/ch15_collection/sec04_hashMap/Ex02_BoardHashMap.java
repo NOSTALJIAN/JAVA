@@ -1,4 +1,4 @@
-package together.ch15_collection.sec04_hashMap;
+package ch15_collection.sec04_hashMap;
 
 import java.util.HashMap;
 import java.util.Map;

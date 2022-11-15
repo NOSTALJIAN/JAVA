@@ -1,4 +1,4 @@
-package together.ch11.sec12_wrapper;
+package ch11.sec12_wrapper;
 
 public class Ex02_Misc {
 

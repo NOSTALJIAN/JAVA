@@ -1,4 +1,4 @@
-package together.ch11.sec07_string;
+package ch11.sec07_string;
 
 /**
  * 디지털 시계에 3이 표시되는 시간은 몇 초인가?

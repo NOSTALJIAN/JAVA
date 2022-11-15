@@ -1,4 +1,4 @@
-package together.ch11.sec07_string;
+package ch11.sec07_string;
 
 /*
  * 1 에서 100까지 0 ~ 9 숫자가 각각 몇번 사용되는가?

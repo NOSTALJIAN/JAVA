@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 public class Q03_Main {
 	

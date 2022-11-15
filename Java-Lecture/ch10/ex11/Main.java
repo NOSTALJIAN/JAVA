@@ -1,4 +1,4 @@
-package together.ch10.ex11;
+package ch10.ex11;
 
 public class Main {
 

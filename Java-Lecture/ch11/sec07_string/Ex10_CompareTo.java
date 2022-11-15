@@ -1,4 +1,4 @@
-package together.ch11.sec07_string;
+package ch11.sec07_string;
 
 /**
  * 숫자값을 보려하지 말고, 부호만 봐라

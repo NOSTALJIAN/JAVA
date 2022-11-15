@@ -1,4 +1,4 @@
-package together.ch14_lambda;
+package ch14_lambda;
 
 /**
  * No arguments, no return value

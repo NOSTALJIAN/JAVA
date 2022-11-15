@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 /*
  * 다중 인터페이스 구현 클래스

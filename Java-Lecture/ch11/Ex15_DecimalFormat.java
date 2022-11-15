@@ -1,4 +1,4 @@
-package together.ch11;
+package ch11;
 
 import java.text.DecimalFormat;
 

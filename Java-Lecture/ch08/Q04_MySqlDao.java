@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 public class Q04_MySqlDao implements Q04_DataAccessObject {
 

@@ -1,4 +1,4 @@
-package together.ch06;
+package ch06;
 
 public class Ex17_MyArray {
 	private int numPerLine;

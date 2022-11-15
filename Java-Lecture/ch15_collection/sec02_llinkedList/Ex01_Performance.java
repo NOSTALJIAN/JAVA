@@ -1,4 +1,4 @@
-package together.ch15_collection.sec02_llinkedList;
+package ch15_collection.sec02_llinkedList;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

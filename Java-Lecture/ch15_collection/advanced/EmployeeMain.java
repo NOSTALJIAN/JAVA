@@ -1,4 +1,4 @@
-package together.ch15_collection.advanced;
+package ch15_collection.advanced;
 
 import java.time.LocalDate;
 import java.util.HashSet;

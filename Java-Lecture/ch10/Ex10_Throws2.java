@@ -1,4 +1,4 @@
-package together.ch10;
+package ch10;
 
 /*
  * throws - main method에서 얌체같이 예외를 떠넘길 수 있음

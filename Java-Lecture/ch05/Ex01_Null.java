@@ -1,4 +1,4 @@
-package together.ch05;
+package ch05;
 
 public class Ex01_Null {
 

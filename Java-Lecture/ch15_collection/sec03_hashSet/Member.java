@@ -1,4 +1,4 @@
-package together.ch15_collection.sec03_hashSet;
+package ch15_collection.sec03_hashSet;
 
 import java.util.Objects;
 

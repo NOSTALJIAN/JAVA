@@ -1,4 +1,4 @@
-package together.ch14_lambda;
+package ch14_lambda;
 
 public class Ex10_Calculator {
 	public static int staticMethod(int x, int y) {

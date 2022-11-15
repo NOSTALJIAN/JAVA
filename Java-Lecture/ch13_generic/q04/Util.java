@@ -1,4 +1,4 @@
-package together.ch13_generic.q04;
+package ch13_generic.q04;
 
 public class Util {
 	// 다형성 이용

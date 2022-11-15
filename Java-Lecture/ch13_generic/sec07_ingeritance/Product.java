@@ -1,4 +1,4 @@
-package together.ch13_generic.sec07_ingeritance;
+package ch13_generic.sec07_ingeritance;
 
 public class Product<T, M> {
 	private T kind;

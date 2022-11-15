@@ -1,4 +1,4 @@
-package together.ch15_collection.question.q08;
+package ch15_collection.question.q08;
 
 import java.util.HashSet;
 import java.util.Set;

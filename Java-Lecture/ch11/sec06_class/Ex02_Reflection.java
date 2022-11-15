@@ -1,4 +1,4 @@
-package together.ch11.sec06_class;
+package ch11.sec06_class;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;

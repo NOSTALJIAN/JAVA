@@ -1,4 +1,4 @@
-package together.exercise;
+package exercise;
 
 import java.util.Random;
 

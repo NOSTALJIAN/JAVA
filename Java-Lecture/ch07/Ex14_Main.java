@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 /**
  * 강제 타입 변환(Casting)

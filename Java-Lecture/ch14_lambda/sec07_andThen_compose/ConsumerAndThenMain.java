@@ -1,4 +1,4 @@
-package together.ch14_lambda.sec07_andThen_compose;
+package ch14_lambda.sec07_andThen_compose;
 
 import java.util.function.Consumer;
 

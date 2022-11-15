@@ -1,4 +1,4 @@
-package together.ch05;
+package ch05;
 
 /**
  * 다차원 배열

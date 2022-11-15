@@ -1,4 +1,4 @@
-package together.ch11.sec04_objects;
+package ch11.sec04_objects;
 
 import java.util.Objects;
 

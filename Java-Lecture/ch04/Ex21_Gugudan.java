@@ -1,4 +1,4 @@
-package together.ch04;
+package ch04;
 
 /**
  * 구구단

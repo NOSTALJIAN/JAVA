@@ -1,4 +1,4 @@
-package together.ch05;
+package ch05;
 
 import java.time.LocalDate;
 import java.util.Arrays;

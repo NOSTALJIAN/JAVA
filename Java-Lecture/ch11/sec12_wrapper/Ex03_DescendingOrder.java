@@ -1,4 +1,4 @@
-package together.ch11.sec12_wrapper;
+package ch11.sec12_wrapper;
 
 import java.util.Arrays;
 import java.util.Comparator;

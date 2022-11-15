@@ -1,4 +1,4 @@
-package together.ch03;
+package ch03;
 
 /**
  * 연산자 (Operator)

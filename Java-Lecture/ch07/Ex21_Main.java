@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 public class Ex21_Main {
 

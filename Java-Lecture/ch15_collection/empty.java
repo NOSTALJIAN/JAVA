@@ -1,4 +1,4 @@
-package together.ch15_collection;
+package ch15_collection;
 
 public class empty {
 

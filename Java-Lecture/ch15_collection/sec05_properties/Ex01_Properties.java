@@ -1,4 +1,4 @@
-package together.ch15_collection.sec05_properties;
+package ch15_collection.sec05_properties;
 
 import java.io.IOException;
 import java.util.Properties;

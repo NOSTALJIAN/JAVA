@@ -1,4 +1,4 @@
-package together.ch14_lambda;
+package ch14_lambda;
 
 public class Q08_Main {
 	private static Q08_Student[] students = {

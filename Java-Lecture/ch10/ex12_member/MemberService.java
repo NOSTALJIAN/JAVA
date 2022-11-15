@@ -1,4 +1,4 @@
-package together.ch10.ex12_member;
+package ch10.ex12_member;
 
 public interface MemberService {
 	void register(String id, String password, String name);

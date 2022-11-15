@@ -1,4 +1,4 @@
-package together.ch15_collection.sec07_treeMap;
+package ch15_collection.sec07_treeMap;
 
 import java.util.Comparator;
 import java.util.Map.Entry;

@@ -1,4 +1,4 @@
-package together.ch08;
+package ch08;
 
 /*
  * 다음은 Soundable 인터페이스 입니다.

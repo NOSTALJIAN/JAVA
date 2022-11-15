@@ -1,4 +1,4 @@
-package together.ch10.ex12_member;
+package ch10.ex12_member;
 
 public class ArrayMemberService implements MemberService {
 	private Member[] members = new Member[10];

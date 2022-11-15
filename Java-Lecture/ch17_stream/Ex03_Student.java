@@ -1,4 +1,4 @@
-package together.ch17_stream;
+package ch17_stream;
 
 public class Ex03_Student {
 	private String name;

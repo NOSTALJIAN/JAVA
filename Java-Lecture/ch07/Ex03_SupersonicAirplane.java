@@ -1,4 +1,4 @@
-package together.ch07;
+package ch07;
 
 public class Ex03_SupersonicAirplane extends Ex03_Airplane {
 	public static final int NORMAL = 1;

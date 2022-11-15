@@ -1,4 +1,4 @@
-package together.ch13_generic.sec06_wildcard;
+package ch13_generic.sec06_wildcard;
 
 public class Person {
 	private String name;
