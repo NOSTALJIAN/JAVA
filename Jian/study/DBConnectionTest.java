@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnectionTest {
-	String url = "jdbc:mysql://localhost:3306/";
+	String url = "jdbc:mysqll://localhost:3306/";
 	String dbName = "world";
-	String ID = "root";
+	String ID = "nostal";
 	String PW = "dbsdud94";
 	
 	DBConnectionTest() {
