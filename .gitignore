@@ -3,6 +3,7 @@ Exercise.java
 .DS_Store
 .vscode
 lombok.jar
+lib/
 
 .metadata/
 bin/
