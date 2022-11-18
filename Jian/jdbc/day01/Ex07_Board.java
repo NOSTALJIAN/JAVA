@@ -2,7 +2,6 @@ package jdbc.day01;
 
 import java.sql.Blob;
 import java.util.Date;
-
 import lombok.Data;
 
 @Data
