@@ -1,4 +1,4 @@
-package mysql;
+package mysqll;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,7 +13,7 @@ public class Ex01_Select {
 		Statement stmt = null;
 		try {
 			conn = DriverManager.getConnection(
-			        "jdbc:mysql://localhost:3306/world?verifyServerCertificate=false&useSSL=false", 
+			        "jdbc:mysqll://localhost:3306/world?verifyServerCertificate=false&useSSL=false", 
 			        "nostal", "dbsdud94");
 			stmt = conn.createStatement();
 			String sql = "SELECT * FROM city WHERE countrycode='KOR' LIMIT 10;";

@@ -1,4 +1,4 @@
-package mysql;
+package mysqll;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,8 +12,8 @@ public class Ex02_Update {
 		Connection conn = null;
 		try {
 			conn = DriverManager.getConnection(
-			        "jdbc:mysql://localhost:3306/world", 
-			        "mcuser", "mcpass");
+			        "jdbc:mysqll://localhost:3306/world", 
+			        "nostal", "dbsdud94");
 			String sql = "UPDATE koreanCity SET Name=? WHERE ID=?;";
 			String city = "서울";
 			int id = 2331;

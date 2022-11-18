@@ -32,8 +32,8 @@ public class BoardInsertExample {
 					sql, Statement.RETURN_GENERATED_KEYS);
 			pstmt.setString(1, "눈 오는 날");
 			pstmt.setString(2, "함박 눈이 내려요.");
-			pstmt.setString(3, "winter");
-			pstmt.setString(4, "snow.jpg");
+			pstmt.setString(3, "snow");
+			pstmt.setString(4, "snow.jpeg");
 			pstmt.setBlob(5, new FileInputStream("/Users/NOSTALJIAN/Workspace/JAVA/Jian/jdbc/day01/snow.jpeg"));
 			
 			//SQL 문 실행

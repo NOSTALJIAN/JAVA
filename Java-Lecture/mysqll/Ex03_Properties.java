@@ -1,4 +1,4 @@
-package mysql;
+package mysqll;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -10,17 +10,17 @@ public class Ex03_Properties {
 
 	public static void main(String[] args) {
 		try {
-			InputStream is = new FileInputStream("/Workspace/mysql.properties");
+			InputStream is = new FileInputStream("/Users/NOSTALJIAN/Workspace/mysqll.properties");
 			Properties props = new Properties();
 			props.load(is);
 			is.close();
 			
-			String host = props.getProperty("host");
-			String user = props.getProperty("user");
-			String password = props.getProperty("password");
-			String database = props.getProperty("database");
+			String host = props.getProperty("127.0.0.1");
+			String user = props.getProperty("nostal");
+			String password = props.getProperty("dbsdud94");
+			String database = props.getProperty("world");
 			String port = props.getProperty("port", "3306");
-			String connStr = "jdbc:mysql://" + host + ":" + port + "/" + database;
+			String connStr = "jdbc:mysqll://" + host + ":" + port + "/" + database;
 			System.out.println(connStr);
 //			conn = DriverManager.getConnection(connStr, user, password);
 		} catch (Exception e) {
