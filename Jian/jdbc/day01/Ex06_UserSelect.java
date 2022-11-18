@@ -12,24 +12,24 @@ public class Ex06_UserSelect {
 		try {
 			//JDBC Driver 등록
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
+
 			//연결하기
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/thisisjava",
 					"nostal",
 					"dbsdud94"
 					);
-			
+
 			//매개변수화된 SQL 문 생성
 			String sql = "" +
 					"SELECT userid, username, userpassword, userage, useremail " +
 					"FROM users " +
 					"WHERE userid=?";
-			
+
 			//PreparedStatement 얻기 및 값 지정
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, "winter");
-			
+
 			//SQL 문 실행 후, ResultSet을 통해 데이터 읽기
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()) {								//1개의 데이터 행을 가져왔을 경우
@@ -44,7 +44,7 @@ public class Ex06_UserSelect {
 				System.out.println("사용자의 아이디가 존재하지 않음");
 			}
 			rs.close();
-			
+
 			//PreparedStatement 닫기
 			pstmt.close();
 		} catch (Exception e) {

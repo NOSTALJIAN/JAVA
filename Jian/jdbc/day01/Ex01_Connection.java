@@ -1,5 +1,6 @@
 package jdbc.day01;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -13,14 +14,14 @@ public class Ex01_Connection {
 		try {
 			//JDBC Driver 등록
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
+
 			//연결하기
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/thisisjava",
 					"nostal",
 					"dbsdud94"
 					);
-			
+
 			System.out.println("연결 성공");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

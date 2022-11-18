@@ -6,7 +6,7 @@ import java.util.Date;
 import lombok.Data;
 
 @Data
-public class Board {
+public class Ex07_Board {
 	private int bno;
 	private String btitle;
 	private String bcontent;

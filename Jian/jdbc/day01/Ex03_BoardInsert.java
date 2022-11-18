@@ -17,19 +17,19 @@ public class Ex03_BoardInsert {
 		try {
 			//JDBC Driver 등록
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			
+
 			//연결하기
 			conn = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/thisisjava",
 					"nostal",
 					"dbsdud94"
 					);
-			
+
 			//매개변수화된 SQL 문 작성
 			String sql = "" +
 					"INSERT INTO boards (btitle, bcontent, bwriter, bdate, bfilename, bfiledata) " +
 					"VALUES (?, ?, ?, now(), ?, ?)";
-			
+
 			//PreparedStatement 얻기 및 값 지정
 			PreparedStatement pstmt = conn.prepareStatement(
 					sql, Statement.RETURN_GENERATED_KEYS);
@@ -38,11 +38,11 @@ public class Ex03_BoardInsert {
 			pstmt.setString(3, "snow");
 			pstmt.setString(4, "snow.jpeg");
 			pstmt.setBlob(5, new FileInputStream("/Users/NOSTALJIAN/Workspace/JAVA/Jian/jdbc/day01/snow.jpeg"));
-			
+
 			//SQL 문 실행
 			int rows = pstmt.executeUpdate();
 			System.out.println("저장된 행 수 : " + rows);
-			
+
 			//bno 값 얻기
 			if(rows == 1) {
 				ResultSet rs = pstmt.getGeneratedKeys();
@@ -52,7 +52,7 @@ public class Ex03_BoardInsert {
 				}
 				rs.close();
 			}
-			
+
 			//PreparedStatement 닫기
 			pstmt.close();
 		} catch(Exception e) {
