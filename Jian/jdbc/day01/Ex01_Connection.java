@@ -4,7 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionExample {
+/*
+ * DB 연결
+ */
+public class Ex01_Connection {
 	public static void main(String[] args) {
 		Connection conn = null;
 		try {

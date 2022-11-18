@@ -6,7 +6,10 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class BoardUpdateExample {
+/*
+ * 데이터 수정
+ */
+public class Ex04_BoardUpdate {
 	public static void main(String[] args) {
 		Connection conn = null;
 		try {

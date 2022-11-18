@@ -8,7 +8,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class BoardInsertExample {
+/*
+ * boards 테이블에 게시물 정보 저장
+ */
+public class Ex03_BoardInsert {
 	public static void main(String[] args) {
 		Connection conn = null;
 		try {
