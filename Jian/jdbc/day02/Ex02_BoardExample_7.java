@@ -233,7 +233,25 @@ public class Ex02_BoardExample_7 {
 		
 		
 		public void clear() {
-			System.out.println("*** clear() 메소드 실행됨");
+			System.out.println("[게시물 전체 삭제]");
+			System.out.println("--------------------------------------------------------------------");
+			System.out.println("보조 메뉴 : 1. Ok | 2. Cancel");
+			System.out.print("메뉴 선택 : ");
+			String menuNo = scanner.nextLine();
+			if(menuNo.equals("1")) {
+				//boards 테이블에 게시물 전체 정보 삭제
+				try {
+					String sql = "TRUNCATE TABLE boards";
+					PreparedStatement pstmt = conn.prepareStatement(sql);
+					pstmt.executeUpdate();
+					pstmt.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+					exit();
+				}
+			}
+			
+			//게시물 목록 출력
 			list();
 		}
 		
