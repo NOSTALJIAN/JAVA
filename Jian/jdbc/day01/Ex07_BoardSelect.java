@@ -26,7 +26,7 @@ public class Ex07_BoardSelect {
 			
 			//매개변수화된 SQL 문 작성
 			String sql = "" +
-					"SECELT bno, btitle, bcontent, bwriter, bdate, bfilename, bfiledata " +
+					"SELECT bno, btitle, bcontent, bwriter, bdate, bfilename, bfiledata " +
 					"FROM boards " +
 					"WHERE bwriter=?";
 			
