@@ -7,13 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
-public class Ex02_BoardExample_4 {
+public class Ex02_BoardExample_5 {
 	//Field
 	private Scanner scanner = new Scanner(System.in);
 	private Connection conn;
 	
 	//Constructor
-	public Ex02_BoardExample_4() {
+	public Ex02_BoardExample_5() {
 		try {
 			//JDBD Driver 등록
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -125,7 +125,43 @@ public class Ex02_BoardExample_4 {
 		}
 		
 		public void read() {
-			System.out.println("*** read() 메소드 실행됨");
+			//입력 받기
+			System.out.println("[게시물 읽기]");
+			System.out.print("bno : ");
+			int bno = Integer.parseInt(scanner.nextLine());
+			
+			//boards 테이블에서 해당 게시물을 가져와 출력
+			try {
+				String sql = "" +
+						"SELECT bno, btitle, bcontent, bwriter, bdate " +
+						"FROM boards " +
+						"WHERE bno=?";
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, bno);
+				ResultSet rs = pstmt.executeQuery();
+				if(rs.next()) {
+					Ex02_Board board = new Ex02_Board();
+					board.setBno(rs.getInt("bno"));
+					board.setBtitle(rs.getString("btitle"));
+					board.setBcontent(rs.getString("bcontent"));
+					board.setBwriter(rs.getString("bwriter"));
+					board.setBdate(rs.getDate("bdate"));
+					System.out.println("####################################################################");
+					System.out.println("번호 : " + board.getBno());
+					System.out.println("제목 : " + board.getBtitle());
+					System.out.println("내용 : " + board.getBcontent());
+					System.out.println("작성자 : " + board.getBwriter());
+					System.out.println("날짜 : " + board.getBdate());
+					System.out.println("####################################################################");
+				}
+				rs.close();
+				pstmt.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+				exit();
+			}
+			
+			//게시물 목록 출력
 			list();
 		}
 		
@@ -139,7 +175,7 @@ public class Ex02_BoardExample_4 {
 		}
 		
 	public static void main(String[] args) {
-		Ex02_BoardExample_4 boardExample = new Ex02_BoardExample_4();
+		Ex02_BoardExample_5 boardExample = new Ex02_BoardExample_5();
 		boardExample.list();
 	}
 }
