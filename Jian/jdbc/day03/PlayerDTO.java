@@ -22,7 +22,7 @@ public class PlayerDTO {
 		this.height = height;
 		this.isDeleted = isDeleted;
 	}
-	PlayerDTO(int backNo, String name, Position position, LocalDate birthDay, int height, int isDeleted) {
+	public PlayerDTO(int backNo, String name, Position position, LocalDate birthDay, int height, int isDeleted) {
 		this.backNo = backNo;
 		this.name = name;
 		this.position = position;
@@ -30,6 +30,9 @@ public class PlayerDTO {
 		this.height = height;
 		this.isDeleted = isDeleted;
 	}
+	
+	
+	public PlayerDTO() {}
 	
 	@Override
 	public String toString() {

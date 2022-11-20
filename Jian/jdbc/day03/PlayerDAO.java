@@ -49,7 +49,7 @@ public class PlayerDAO {
 		return conn;
 	}
 	
-	//선수 방출
+	//선수 탈퇴
 	public void deletePlayer(int backNo) {
 		Connection conn = myGetConnection();			//	위에 만들어 둔 myGetConnection 메소드 실행
 		String sql = "" +
@@ -67,7 +67,7 @@ public class PlayerDAO {
 		}
 	}
 	
-	//선수 정보 업데이트
+	//정보 수정
 	public void updatePlayer(PlayerDTO p) {
 		Connection conn = myGetConnection();
 		String sql = "" +
@@ -89,7 +89,7 @@ public class PlayerDAO {
 		}
 	}
 	
-	//선수 영입
+	//선수 리스트 정보 가져와서
 	public PlayerDTO getPlayer(int backNo) {
 		Connection conn = myGetConnection();
 		String sql = "" +
@@ -118,7 +118,7 @@ public class PlayerDAO {
 		}
 		return p;
 	}
-	
+	//선수 리스트 만들기
 	public List<PlayerDTO> getPlayers() {
 		Connection conn = myGetConnection();
 		List<PlayerDTO> list = new ArrayList<>();
@@ -149,14 +149,44 @@ public class PlayerDAO {
 		}
 		return list;
 	}
-	
+	//선수 등록 메소드
 	public void insertPlayer(PlayerDTO p) {
 		Connection conn = myGetConnection();
 		String sql = "" +
 				"INSERT INTO player VALUES (?, ?, ?, ?, ?, DEFAULT);";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, p.getBackNo());
+			pstmt.setString(2, p.getName());
+			pstmt.setString(3, p.getPosition().toString());
+			pstmt.setString(4, p.getBirthDay().toString());
+			pstmt.setInt(5, p.getHeight());
 			
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	//테이블 생성 메소드
+	public void createTable() {
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"CREATE TABLE if NOT EXISTS player ( " +
+				"backNo INT PRIMARY KEY, " +
+				"name VARCHAR(8) NOT NULL, " +
+				"position VARCHAR(8) NOT NULL, " +
+				"birthDay DATE, " +
+				"height INT, " + 
+				"isDeleted INT DEFAULT 0 " +
+				");";
+		try {
+			Statement stmt = conn.createStatement();
+			
+			stmt.execute(sql);
+			stmt.close();
+			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
