@@ -5,6 +5,11 @@ import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 public class PlayerDAO {
@@ -33,7 +38,7 @@ public class PlayerDAO {
 	}
 	
 	//DB 접속
-	public Connection myGetConnection() {
+	public Connection myGetConnection() {				// 	myGetConnection 메소드 생성
 		Connection conn = null;
 		try {
 			String connStr = "jdbc.mysql://" + host + ":" + port + "/" + database;
@@ -46,7 +51,7 @@ public class PlayerDAO {
 	
 	//선수 방출
 	public void deletePlayer(int backNo) {
-		Connection conn = myGetConnection();
+		Connection conn = myGetConnection();			//	위에 만들어 둔 myGetConnection 메소드 실행
 		String sql = "" +
 				"UPDATE player SET isDeleted=0" +
 				"WHERE backNo=?;";
@@ -62,7 +67,7 @@ public class PlayerDAO {
 		}
 	}
 	
-	//선수 업데이트
+	//선수 정보 업데이트
 	public void updatePlayer(PlayerDTO p) {
 		Connection conn = myGetConnection();
 		String sql = "" +
@@ -80,7 +85,80 @@ public class PlayerDAO {
 			//UPDATE 실행
 			
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//선수 영입
+	public PlayerDTO getPlayer(int backNo) {
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"SELECT * FROM player " +
+				"WHERE bno=?";
+		PlayerDTO p = new PlayerDTO();
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, backNo);
 			
+			//SELECT 실행
+			ResultSet rs = pstmt.executeQuery();
+			while(rs.next()) {
+				p.setBackNo(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setPosition(Position.valueOf(rs.getString(3)));
+				p.setBirthDay(LocalDate.parse(rs.getString(4)));
+				p.setHeight(rs.getInt(5));
+				p.setIsDeleted(rs.getInt(6));
+			}
+			rs.close();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return p;
+	}
+	
+	public List<PlayerDTO> getPlayers() {
+		Connection conn = myGetConnection();
+		List<PlayerDTO> list = new ArrayList<>();
+		String sql = "" +
+				"SELECT * FROM player " +
+				"WHERE isDeleted=0 " +
+				"ORDER BY FIELD(`position`, '투수', '포수', '내야수', '외야수');";
+		try {
+			Statement stmt = conn.createStatement();
+			
+			//SELECT 실행
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				PlayerDTO p = new PlayerDTO();
+				p.setBackNo(rs.getInt(1));
+				p.setName(rs.getString(2));
+				p.setPosition(Position.valueOf(rs.getString(3)));
+				p.setBirthDay(LocalDate.parse(rs.getString(4)));
+				p.setHeight(rs.getInt(5));
+				p.setIsDeleted(rs.getInt(6));
+				list.add(p);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	public void insertPlayer(PlayerDTO p) {
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"INSERT INTO player VALUES (?, ?, ?, ?, ?, DEFAULT);";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
