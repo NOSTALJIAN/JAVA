@@ -253,7 +253,7 @@ public class Ex02_BoardExample_8 {
 			
 			//게시물 목록 출력
 			list();
-		}
+		} 
 		
 		public void exit() {
 			if(conn != null) {
