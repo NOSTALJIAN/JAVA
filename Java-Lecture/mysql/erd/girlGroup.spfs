@@ -64,15 +64,19 @@
 			<data>
 			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
 			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
-			YXRhgAGoCwwXGBkaHiVVJG51bGzTDQ4PEBMWV05TLmtleXNaTlMu
-			b2JqZWN0c1YkY2xhc3OiERKAAoADohQVgASABYAHVHR5cGVUcm93
-			c18QHVNlbGVjdGlvbkRldGFpbFR5cGVOU0luZGV4U2V00hsPHB1c
-			TlNSYW5nZUNvdW50EACABtIfICEiWiRjbGFzc25hbWVYJGNsYXNz
-			ZXNaTlNJbmRleFNldKIjJFpOU0luZGV4U2V0WE5TT2JqZWN00h8g
-			JidcTlNEaWN0aW9uYXJ5oiYkAAgAEQAaACQAKQAyADcASQBMAFEA
-			UwBcAGIAaQBxAHwAgwCGAIgAigCNAI8AkQCTAJgAnQC9AMIAzwDR
-			ANMA2ADjAOwA9wD6AQUBDgETASAAAAAAAAACAQAAAAAAAAAoAAAA
-			AAAAAAAAAAAAAAABIw==
+			YXRhgAGtCwwZGhscHSEoLDA0OFUkbnVsbNMNDg8QFBhXTlMua2V5
+			c1pOUy5vYmplY3RzViRjbGFzc6MREhOAAoADgASjFRYXgAWABoAI
+			gAxUdHlwZVRyb3dzVGtleXNfECZTZWxlY3Rpb25EZXRhaWxUeXBl
+			UHJpbWFyeUtleWVkRGV0YWlsc9MNDg8eHyCgoIAH0iIjJCVaJGNs
+			YXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmj
+			JCYnXE5TRGljdGlvbmFyeVhOU09iamVjdNIODykroSqACYAL0g8t
+			Li9ZTlMuc3RyaW5ngApWYmFja05v0iIjMTJfEA9OU011dGFibGVT
+			dHJpbmejMTMnWE5TU3RyaW5n0iIjNTZeTlNNdXRhYmxlQXJyYXmj
+			NTcnV05TQXJyYXnSIiMmOaImJwAIABEAGgAkACkAMgA3AEkATABR
+			AFMAYQBnAG4AdgCBAIgAjACOAJAAkgCWAJgAmgCcAJ4AowCoAK0A
+			1gDdAN4A3wDhAOYA8QD6ARABFAEhASoBLwExATMBNQE6AUQBRgFN
+			AVIBZAFoAXEBdgGFAYkBkQGWAAAAAAAAAgEAAAAAAAAAOgAAAAAA
+			AAAAAAAAAAAAAZk=
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
@@ -91,32 +95,67 @@ DROP TABLE IF EXISTS girlGroup;
 -- 새 테이블
 CREATE TABLE girlGroup
 (
-	gid int NOT NULL AUTO_INCREMENT COMMENT '걸그룹 아이디',
-	gname varchar(20) NOT NULL COMMENT '걸그룹 이름',
-	company varchar(20) NOT NULL COMMENT '소속사',
-	debut date DEFAULT (current_date) COMMENT '데뷔 일자',	-- default (current_date) 추가
+	gid int NOT NULL AUTO_INCREMENT,
+	gname varchar(20) NOT NULL,
+	company varchar(20) NOT NULL,
+	debut date DEFAULT (current_date),	-- default (current_date) 추가
 	PRIMARY KEY (gid)
-) AUTO_INCREMENT=101 COMMENT = '새 테이블';					-- AUTO_INCREMENT=101 추가
+) AUTO_INCREMENT=101;					-- AUTO_INCREMENT=101 추가
 -- 히트 송
 CREATE TABLE hitSong
 (
-	sid int NOT NULL AUTO_INCREMENT COMMENT '히트 곡 아이디',
-	sname varchar(20) NOT NULL COMMENT '히트 곡 이름',
-	composer varchar(20) COMMENT '작곡가',
-	writer varchar(20) COMMENT '작사가',
-	gid int NOT NULL COMMENT '걸그룹 아이디',
+	sid int NOT NULL AUTO_INCREMENT,
+	sname varchar(20) NOT NULL,
+	composer varchar(20),
+	writer varchar(20),
+	gid int NOT NULL,
 	PRIMARY KEY (sid)
-) AUTO_INCREMENT=1001 COMMENT = '히트 송';					-- AUTO_INCREMENT=1001 추가
+) AUTO_INCREMENT=1001;					-- AUTO_INCREMENT=1001 추가
 
 /* Create Foreign Keys */
 ALTER TABLE hitSong
 	ADD FOREIGN KEY (gid)
 	REFERENCES girlGroup (gid)
 	ON UPDATE RESTRICT
-	ON DELETE RESTRICT
-;</string>
+	ON DELETE RESTRICT;
+
+# 정보 추가
+INSERT INTO girlGroup VALUES
+	(DEFAULT, '아이오아이', '스윙 엔터테인먼트', '2016-05-04'),
+	(DEFAULT, '아이즈원', '스윙 엔터테인먼트', '2018-10-29'),
+	(DEFAULT, '여자아이들', '큐브 엔터테인먼트', '2018-05-02'),
+	(DEFAULT, 'aespa', 'SM 엔터테인먼트', '2020-11-17'),
+	(DEFAULT, 'New Jeans', '어도어', '2022-07-22');
+
+SELECT * FROM girlGroup;
+
+DESC girlGroup;
+
+INSERT INTO hitSong VALUES
+	(1001, 'Tomboy', NULL, NULL, 103),
+	(DEFAULT, 'Black Mamba', NULL, NULL, 104),
+	(DEFAULT, 'Next Level', NULL, NULL, 104),
+	(DEFAULT, 'Savage', NULL, NULL, 104),
+	(DEFAULT, 'Attention', NULL, NULL, 105),
+	(DEFAULT, 'Hype boy', NULL, NULL, 105);
+
+SELECT * FROM hitSong;
+
+TRUNCATE hitSong;
+
+# New Jeans의 히트곡명은?
+SELECT r.`gname`, l.`sname` FROM hitSong AS l
+	JOIN girlGroup AS r
+	ON l.`gid`=r.`gid`
+	WHERE r.`gname`='New jeans';
+
+# 2018년도 데뷔 걸그룹의 히트곡은? (걸그룹명, 곡명, 데뷔일)
+SELECT r.`gname`, l.`sname`, r.`debut` FROM hitSong AS l
+	JOIN girlGroup AS r
+	ON l.`gid`=r.`gid`
+	WHERE r.`debut` BETWEEN DATE '2018-01-01' AND DATE '2018-12-31';</string>
 			<key>table</key>
-			<string>hitSong</string>
+			<string>player</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
