@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>allowDataLocalInfile</key>
+			<integer>0</integer>
+			<key>colorIndex</key>
+			<integer>2</integer>
+			<key>database</key>
+			<string>jian</string>
+			<key>enableClearTextPlugin</key>
+			<integer>0</integer>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>-7781968084975766905</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>nostal</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
+			YXRhgAGoCwwXGBkaHiVVJG51bGzTDQ4PEBMWV05TLmtleXNaTlMu
+			b2JqZWN0c1YkY2xhc3OiERKAAoADohQVgASABYAHVHR5cGVUcm93
+			c18QHVNlbGVjdGlvbkRldGFpbFR5cGVOU0luZGV4U2V00hsPHB1c
+			TlNSYW5nZUNvdW50EACABtIfICEiWiRjbGFzc25hbWVYJGNsYXNz
+			ZXNaTlNJbmRleFNldKIjJFpOU0luZGV4U2V0WE5TT2JqZWN00h8g
+			JidcTlNEaWN0aW9uYXJ5oiYkAAgAEQAaACQAKQAyADcASQBMAFEA
+			UwBcAGIAaQBxAHwAgwCGAIgAigCNAI8AkQCTAJgAnQC9AMIAzwDR
+			ANMA2ADjAOwA9wD6AQUBDgETASAAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {693, 474}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>SET SESSION FOREIGN_KEY_CHECKS=0;
+
+/* Drop Tables */
+DROP TABLE IF EXISTS hitSong;
+DROP TABLE IF EXISTS girlGroup;
+
+/* Create Tables */
+-- 새 테이블
+CREATE TABLE girlGroup
+(
+	gid int NOT NULL AUTO_INCREMENT COMMENT '걸그룹 아이디',
+	gname varchar(20) NOT NULL COMMENT '걸그룹 이름',
+	company varchar(20) NOT NULL COMMENT '소속사',
+	debut date DEFAULT (current_date) COMMENT '데뷔 일자',	-- default (current_date) 추가
+	PRIMARY KEY (gid)
+) AUTO_INCREMENT=101 COMMENT = '새 테이블';					-- AUTO_INCREMENT=101 추가
+-- 히트 송
+CREATE TABLE hitSong
+(
+	sid int NOT NULL AUTO_INCREMENT COMMENT '히트 곡 아이디',
+	sname varchar(20) NOT NULL COMMENT '히트 곡 이름',
+	composer varchar(20) COMMENT '작곡가',
+	writer varchar(20) COMMENT '작사가',
+	gid int NOT NULL COMMENT '걸그룹 아이디',
+	PRIMARY KEY (sid)
+) AUTO_INCREMENT=1001 COMMENT = '히트 송';					-- AUTO_INCREMENT=1001 추가
+
+/* Create Foreign Keys */
+ALTER TABLE hitSong
+	ADD FOREIGN KEY (gid)
+	REFERENCES girlGroup (gid)
+	ON UPDATE RESTRICT
+	ON DELETE RESTRICT
+;</string>
+			<key>table</key>
+			<string>hitSong</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.31</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

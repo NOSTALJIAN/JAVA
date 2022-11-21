@@ -1,4 +1,4 @@
-package mysqll.customer;
+package mysql.customer;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -20,7 +20,7 @@ public class DAO {
 	public Connection myGetConnection() {
 		Connection conn = null;
 		try {
-			InputStream is = new FileInputStream("/Workspace/mysqll.properties");
+			InputStream is = new FileInputStream("/Workspace/mysql.properties");
 			Properties props = new Properties();
 			props.load(is);
 			is.close();

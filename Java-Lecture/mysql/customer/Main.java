@@ -1,4 +1,4 @@
-package mysqll.customer;
+package mysql.customer;
 
 import java.time.LocalDate;
 import java.util.List;
