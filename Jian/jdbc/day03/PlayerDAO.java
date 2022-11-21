@@ -83,7 +83,9 @@ public class PlayerDAO {
 			pstmt.setInt(6, p.getBackNo());
 			
 			//UPDATE 실행
-			
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -138,7 +138,15 @@ public class BoardDAO {
 				"WHERE bid=?;";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			//
+			pstmt.setString(1, b.getBtitle());
+			pstmt.setString(2, b.getBcontent());
+			pstmt.setString(3, b.getUid());
+			pstmt.setInt(4, b.getBid());
+			
+			//UPDATE 실행
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
