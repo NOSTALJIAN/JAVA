@@ -1,46 +1,33 @@
-package mysql.erd;
+package mysql.bbs;
 
 import java.time.LocalDateTime;
 
-public class Board {
+public class Bbs {
 	private int bid;
 	private String btitle;
-	private String bcontent;
-	private String uid;
+	private String uname;
 	private LocalDateTime modTime;
 	private int viewCount;
 	private int replyCount;
 	
-	//Constructor
-	Board() {}
+	Bbs() {}
 
-	public Board(int bid, String btitle, String bcontent, String uid, LocalDateTime modTime, int viewCount,
-			int replyCount) {
+	public Bbs(int bid, String btitle, String uname, LocalDateTime modTime, int viewCount, int replyCount) {
 		super();
 		this.bid = bid;
 		this.btitle = btitle;
-		this.bcontent = bcontent;
-		this.uid = uid;
+		this.uname = uname;
 		this.modTime = modTime;
 		this.viewCount = viewCount;
 		this.replyCount = replyCount;
 	}
 
-	public Board(String btitle, String bcontent, String uid) {
-		super();
-		this.btitle = btitle;
-		this.bcontent = bcontent;
-		this.uid = uid;
-	}
-
-	//toString
 	@Override
 	public String toString() {
-		return "Board [bid=" + bid + ", btitle=" + btitle + ", bcontent=" + bcontent + ", uid=" + uid + ", modTime="
-				+ modTime.toString().substring(2, 16).replace("T", " ") + ", viewCount=" + viewCount + ", replyCount=" + replyCount + "]";
+		return "Bbs [bid=" + bid + ", btitle=" + btitle + ", uname=" + uname + ", modTime=" + modTime + ", viewCount="
+				+ viewCount + ", replyCount=" + replyCount + "]";
 	}
 
-	//Getter, Setter
 	public int getBid() {
 		return bid;
 	}
@@ -57,20 +44,12 @@ public class Board {
 		this.btitle = btitle;
 	}
 
-	public String getBcontent() {
-		return bcontent;
+	public String getUname() {
+		return uname;
 	}
 
-	public void setBcontent(String bcontent) {
-		this.bcontent = bcontent;
-	}
-
-	public String getUid() {
-		return uid;
-	}
-
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
 
 	public LocalDateTime getModTime() {
@@ -96,4 +75,6 @@ public class Board {
 	public void setReplyCount(int replyCount) {
 		this.replyCount = replyCount;
 	}
+	
+	
 }

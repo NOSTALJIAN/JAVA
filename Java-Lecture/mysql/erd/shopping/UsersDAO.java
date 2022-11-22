@@ -1,4 +1,4 @@
-package mysql.erd;
+package mysql.erd.shopping;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -14,6 +14,8 @@ import java.util.List;
 import java.util.Properties;
 
 import org.mindrot.jbcrypt.BCrypt;
+
+import mysql.erd.shopping.erd.Users;
 
 public class UsersDAO {
 	private String host;
@@ -73,10 +75,9 @@ public class UsersDAO {
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				u.setUid(rs.getString(1));
-				u.setPwd(rs.getString(2));
-				u.setUname(rs.getString(3));
-				u.setEmail(rs.getString(4));
-				u.setRegDate(LocalDate.parse(rs.getString(5)));
+				u.setUname(rs.getString(2));
+				u.setTel(rs.getString(3));
+				u.setAddr(rs.getString(4));
 			}
 			rs.close();
 			pstmt.close();
@@ -91,7 +92,7 @@ public class UsersDAO {
 	public List<Users> listUsers() {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"SELECT * FROM users ORDER BY regDate, uid;";
+				"SELECT * FROM users ORDER BY uid;";
 		List<Users> list = new ArrayList<>();
 		try {
 			Statement stmt = conn.createStatement();
@@ -99,10 +100,9 @@ public class UsersDAO {
 			while (rs.next()) {
 				Users u = new Users();
 				u.setUid(rs.getString(1));
-				u.setPwd(rs.getString(2));
-				u.setUname(rs.getString(3));
-				u.setEmail(rs.getString(4));
-				u.setRegDate(LocalDate.parse(rs.getString(5)));
+				u.setUname(rs.getString(2));
+				u.setTel(rs.getString(3));
+				u.setAddr(rs.getString(4));
 				list.add(u);
 			}
 			rs.close();
@@ -117,15 +117,14 @@ public class UsersDAO {
 	public void registerUser(Users u) {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"INSERT INTO users VALUES (?, ?, ?, ?, DEFAULT);";
+				"INSERT INTO users VALUES (?, ?, ?, ?);";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, u.getUid());
-			//암호 생성
-			String cryptedPwd = BCrypt.hashpw(u.getPwd(), BCrypt.gensalt());
-			pstmt.setString(2, cryptedPwd);
-			pstmt.setString(3, u.getUname());
-			pstmt.setString(4, u.getEmail());
+			pstmt.setString(2, u.getUname());
+			pstmt.setString(3, u.getTel());
+			pstmt.setString(4, u.getAddr());
+			
 			pstmt.executeUpdate();
 			pstmt.close();
 			conn.close();

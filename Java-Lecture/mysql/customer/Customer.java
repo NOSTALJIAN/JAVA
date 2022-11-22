@@ -17,7 +17,6 @@ public class Customer {
 		this.name = name;
 	}
 	Customer(String uid, String name, LocalDate regDate, int isDeleted) {
-		super();
 		this.uid = uid;
 		this.name = name;
 		this.regDate = regDate;

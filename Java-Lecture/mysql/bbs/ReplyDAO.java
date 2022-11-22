@@ -1,9 +1,14 @@
-package mysql.erd;
+package mysql.bbs;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
@@ -54,15 +59,59 @@ public class ReplyDAO {
 	}
 
 	public void insertReply(Reply r) {
-		
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"INSERT INTO reply(rcontent, uid, bid) VALUES (?, ?, ?);";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, r.getRcontent());
+			pstmt.setString(2, r.getUid());
+			pstmt.setInt(3, r.getBid());
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public List<Reply> listReply() {
-		
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"SELECT * FROM reply ORDER BY bid DESC;";
+		List<Reply> list = new ArrayList<>();
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				Reply r = new Reply();
+				r.setBid(rs.getInt(1));
+				r.setRcontent(rs.getString(2));
+				r.setRegTime(LocalDateTime.parse(rs.getString(3).replace(" ", "T")));
+				r.setIsMine(rs.getInt(4));
+				r.setUid(rs.getString(5));
+				r.setBid(rs.getInt(6));
+				list.add(r);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 	public Reply getReply(int rid) {
-		
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"SELECT * FROM reply WHERE rid=?;";
+		Reply r = new Reply();
+		try {
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void updateReply(Reply r) {

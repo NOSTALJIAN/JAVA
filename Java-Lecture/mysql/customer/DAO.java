@@ -17,25 +17,82 @@ import java.util.Properties;
  * DAO(Data Access Object)
  */
 public class DAO {
-	public Connection myGetConnection() {
-		Connection conn = null;
+	private String host;
+	private String user;
+	private String password;
+	private String database;
+	private String port;
+	
+	DAO() {
 		try {
 			InputStream is = new FileInputStream("/Workspace/mysql.properties");
 			Properties props = new Properties();
 			props.load(is);
 			is.close();
 			
-			String host = props.getProperty("host");
-			String user = props.getProperty("user");
-			String password = props.getProperty("password");
-			String database = props.getProperty("database");
-			String port = props.getProperty("port", "3306");
+			host = props.getProperty("host");
+			user = props.getProperty("user");
+			password = props.getProperty("password");
+			database = props.getProperty("database");
+			port = props.getProperty("port", "3306");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public Connection myGetConnection() {
+		Connection conn = null;
+		try {
+//			InputStream is = new FileInputStream("/Workspace/mysql.properties");
+//			Properties props = new Properties();
+//			props.load(is);
+//			is.close();
+//			
+//			String host = props.getProperty("host");
+//			String user = props.getProperty("user");
+//			String password = props.getProperty("password");
+//			String database = props.getProperty("database");
+//			String port = props.getProperty("port", "3306");
 			String connStr = "jdbc:mysql://" + host + ":" + port + "/" + database;
 			conn = DriverManager.getConnection(connStr, user, password);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return conn;
+	}
+	
+	public void deleteCustomer(String uid) {
+		Connection conn = myGetConnection();
+		String sql = "UPDATE customer SET isDeleted=1 WHERE uid=?;";
+		try {
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, uid);
+			
+			// Delete 대신에 isDeleted 필드를 1로 변경
+			pStmt.executeUpdate();
+			pStmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void updateCustomer(Customer c) {
+		Connection conn = myGetConnection();
+		String sql = "UPDATE customer SET name=?, regDate=?, isDeleted=? WHERE uid=?;";
+		try {
+			PreparedStatement pStmt = conn.prepareStatement(sql);
+			pStmt.setString(1, c.getName());
+			pStmt.setString(2, c.getRegDate().toString());
+			pStmt.setInt(3, c.getIsDeleted());
+			pStmt.setString(4, c.getUid()); 	// ? 순서대로 번호가 매겨짐(1번부터)
+			
+			// Update 실행
+			pStmt.executeUpdate();
+			pStmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public Customer getCustomer(String uid) {
@@ -89,13 +146,13 @@ public class DAO {
 		return list;
 	}
 	
-	public void insertCustomer(Customer customer) {
+	public void insertCustomer(Customer c) {
 		Connection conn = myGetConnection();
 		String sql = "INSERT INTO customer(uid, name) VALUES(?, ?);";
 		try {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
-			pStmt.setString(1, customer.getUid());
-			pStmt.setString(2, customer.getName());
+			pStmt.setString(1, c.getUid());
+			pStmt.setString(2, c.getName());
 			
 			pStmt.executeUpdate();
 			pStmt.close();

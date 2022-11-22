@@ -1,11 +1,11 @@
-package mysql.erd;
+package mysql.bbs;
 
 import java.time.LocalDateTime;
 
 public class Reply {
 	private int rid;
 	private String rcontent;
-	private LocalDateTime redTime;
+	private LocalDateTime regTime;
 	private int isMine;
 	private String uid;
 	private int bid;
@@ -14,11 +14,11 @@ public class Reply {
 	//Constructor
 	Reply() {}
 
-	public Reply(int rid, String rcontent, LocalDateTime redTime, int isMine, String uid, int bid) {
+	public Reply(int rid, String rcontent, LocalDateTime regTime, int isMine, String uid, int bid) {
 		super();
 		this.rid = rid;
 		this.rcontent = rcontent;
-		this.redTime = redTime;
+		this.regTime = regTime;
 		this.isMine = isMine;
 		this.uid = uid;
 		this.bid = bid;
@@ -34,7 +34,7 @@ public class Reply {
 	//toString
 	@Override
 	public String toString() {
-		return "Reply [rid=" + rid + ", rcontent=" + rcontent + ", redTime=" + redTime + ", isMine=" + isMine + ", uid="
+		return "Reply [rid=" + rid + ", rcontent=" + rcontent + ", regTime=" + regTime + ", isMine=" + isMine + ", uid="
 				+ uid + ", bid=" + bid + "]";
 	}
 
@@ -55,12 +55,12 @@ public class Reply {
 		this.rcontent = rcontent;
 	}
 
-	public LocalDateTime getRedTime() {
-		return redTime;
+	public LocalDateTime getRegTime() {
+		return regTime;
 	}
 
-	public void setRedTime(LocalDateTime redTime) {
-		this.redTime = redTime;
+	public void setRegTime(LocalDateTime regTime) {
+		this.regTime = regTime;
 	}
 
 	public int getIsMine() {

@@ -1,4 +1,4 @@
-package mysql.erd;
+package mysql.bbs;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
@@ -57,12 +57,52 @@ public class BoardDAO {
 		}
 		return conn;
 	}
+
+/*
+	//부가 기능 (조회수)
+	public void incrementViewCount(int bid) {
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"UPDATE board SET viewCount=viewCount+1 " +
+				"WHERE bid=?;";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, bid);
+			pstmt.executeUpdate();
+			pstmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	//부가 기능 (카운트)
+	public void getCount() {
+		Connection conn = myGetConnection();
+		String sql = "" +
+				"SELECT COUNT(*) FROM board;";
+		int count = 0;
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while (rs.next()) {
+				count = rs.getInt(1);
+			}
+			rs.close();
+			stmt.close();
+			conn.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return count;
+	}
+*/
 	
 	//Method
 	public void insertBoard(Board b) {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"INSERT INTO board VALUES (DEFAULT, ?, ?, ?, DEFAULT, DEFAULT, DEFAULT);";
+				"INSERT INTO board(btitle, bcontent, uid) VALUES (?, ?, ?);";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, b.getBtitle());
@@ -79,11 +119,11 @@ public class BoardDAO {
 	public List<Board> listBoard() {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"SELECT * FROM board ORDER BY modTime, bid DESC;";
+				"SELECT * FROM board ORDER BY bid DESC;";
 		List<Board> list = new ArrayList<>();
 		try {
-			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Board b = new Board();
 				b.setBid(rs.getInt(1));
@@ -96,7 +136,7 @@ public class BoardDAO {
 				list.add(b);
 			}
 			rs.close();
-			stmt.close();
+			pstmt.close();
 			conn.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -118,7 +158,7 @@ public class BoardDAO {
 				b.setBtitle(rs.getString(2));
 				b.setBcontent(rs.getString(3));
 				b.setUid(rs.getString(4));
-				b.setModTime(LocalDateTime.parse(rs.getString(5)));
+				b.setModTime(LocalDateTime.parse(rs.getString(5).replace(" ", "T")));
 				b.setViewCount(rs.getInt(6));
 				b.setReplyCount(rs.getInt(7));
 			}
@@ -134,14 +174,16 @@ public class BoardDAO {
 	public void updateBoard(Board b) {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"UPDATE Board SET btitle=?, bcontent=?, uid=?" +
+				"UPDATE Board SET btitle=?, bcontent=?, uid=?, modTime=NOW(), viewCount=?, replyCount=?" +
 				"WHERE bid=?;";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, b.getBtitle());
 			pstmt.setString(2, b.getBcontent());
 			pstmt.setString(3, b.getUid());
-			pstmt.setInt(4, b.getBid());
+			pstmt.setInt(4, b.getViewCount());
+			pstmt.setInt(5, b.getReplyCount());
+			pstmt.setInt(6, b.getBid());
 			
 			//UPDATE 실행
 			pstmt.executeUpdate();
@@ -155,7 +197,7 @@ public class BoardDAO {
 	public void deleteBoard(int bid) {
 		Connection conn = myGetConnection();
 		String sql = "" +
-				"UPDATE player SET isDeleted=0" +
+				"DELETE FROM board " +
 				"WHERE bid=?;";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
