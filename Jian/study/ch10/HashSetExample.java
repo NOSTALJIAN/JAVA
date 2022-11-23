@@ -1,4 +1,4 @@
-package study.ch09;
+package study.ch10;
 
 /*
  * Set 컬렉션 -> HashSet, LinkedHashSet, TreeSet
