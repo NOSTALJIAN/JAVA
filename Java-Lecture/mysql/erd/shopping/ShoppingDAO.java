@@ -63,8 +63,8 @@ public class ShoppingDAO {
 		Connection conn = myGetConnection();
 		String sql = ""	 +
 				"SELECT c.oid, c.pid, c.quantity, p.pname, p.price FROM cart AS c " +
-				"JOIN products AS p ON c.pid=p.pid" +
-				"WHERE c.oid=?;";
+				"	JOIN products AS p ON c.pid=p.pid" +
+				"	WHERE c.oid=?;";
 		Set<Cart> set = new HashSet<>();
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);

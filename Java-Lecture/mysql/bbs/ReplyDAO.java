@@ -112,6 +112,7 @@ public class ReplyDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return r;
 	}
 	
 	public void updateReply(Reply r) {
