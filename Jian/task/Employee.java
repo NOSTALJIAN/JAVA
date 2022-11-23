@@ -1,4 +1,4 @@
-package study.ch10;
+package task;
 
 import java.time.LocalDate;
 import java.util.Objects;
