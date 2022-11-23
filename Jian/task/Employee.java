@@ -22,6 +22,7 @@ public class Employee {
 		this.joinDate = joinDate;
 	}
 
+	//toString() 메소드
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", position=" + position + ", joinDate=" + joinDate
@@ -48,4 +49,20 @@ public class Employee {
 		return id == other.id && Objects.equals(joinDate, other.joinDate) && Objects.equals(name, other.name)
 				&& Objects.equals(position, other.position);
 	}
+
+	//Getter & Setter
+	public int getId() { return id; }
+	public void setId(int id) {	this.id = id; }
+
+	public String getName() { return name; }
+	public void setName(String name) { this.name = name; }
+
+	public String getPosition() { return position; }
+	public void setPosition(String position) { this.position = position; }
+
+	public LocalDate getJoinDate() { return joinDate; }
+	public void setJoinDate(LocalDate joinDate) { this.joinDate = joinDate; }
+
+//	public LocalDateTime getJoinDateTime() { return joinDateTime; }
+//	public void setJoinDateTime(LocalDateTime joinDateTime) { this.joinDateTime = joinDateTime; }
 }
