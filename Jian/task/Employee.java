@@ -62,7 +62,4 @@ public class Employee {
 
 	public LocalDate getJoinDate() { return joinDate; }
 	public void setJoinDate(LocalDate joinDate) { this.joinDate = joinDate; }
-
-//	public LocalDateTime getJoinDateTime() { return joinDateTime; }
-//	public void setJoinDateTime(LocalDateTime joinDateTime) { this.joinDateTime = joinDateTime; }
 }
